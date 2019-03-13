@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact manager</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <!--Add Contact Modal-->
+
+    <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Add Contact</h5>
+                    <button type="button" class="close" data-dismiss="modal" area-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="contactFirstName" class="col-form-label">First Name:</label>
+                                    <input type="text" class="form-control" id="contactFirstName">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <label for="contactLastName" class="col-form-label">Last Name:</label>
+                                    <input type="text" class="form-control" id="contactLastName">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="addContact" data-dismiss="modal" onclick="addContact(); formReset()">Add Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-4">
+        <div class="header text-center pt-5">
+            <h1>Contact List</h1>
+        </div>
+        <div class="row text-center pt-5 pb-5">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pt-2 pb-2">
+                <button class="btn btn-primary btn-lg" id="listContact" onclick="listContacts()">List Contacts</button>    
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pt-2 pb-2">
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addContactModal">Add Contacts</button>    
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pt-2 pb-2">
+                <button class="btn btn-danger btn-lg" onclick="quit()">Quit</button>    
+            </div>
+        </div>
+        <div id="contactList">
+
+        </div>
+    </div>
+</body>
+
+<script src="../js/contacts.js"></script>
+</html>
